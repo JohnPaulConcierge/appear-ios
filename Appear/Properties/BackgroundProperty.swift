@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ Sets the view's background to either an image or a color
+ */
 public struct BackgroundProperty: Property {
     
     public enum Kind {

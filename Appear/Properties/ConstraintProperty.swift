@@ -7,14 +7,29 @@
 
 import Foundation
 
+/**
+ ConstraintProperty
+ 
+ When applied, only the constraints of the view and its superview will be affected.
+ */
 public struct ConstraintProperty: Property {
     
-    var attributes: [NSLayoutAttribute: CGFloat]
+    /**
+     The attributes that will be updated.
+     */
+    public var attributes: [NSLayoutAttribute: CGFloat]
     
     public init(attributes: [NSLayoutAttribute: CGFloat]) {
         self.attributes = attributes
     }
     
+    /**
+     Updates the view's constraints
+     
+     This function only looks for constraint in the view and the view's superview.
+     
+     - Parameter view: the view
+     */
     public func apply(view: UIView) {
 
         view.constraints.forEach {

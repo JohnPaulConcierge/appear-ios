@@ -7,6 +7,10 @@
 
 import Foundation
 
+/**
+ An enum representing control states.
+ This is required because UIControlState does not implement the Hashable protocol and making a UIControlState extension may result in conflicts.
+ */
 public enum ControlState: String {
     
     case normal

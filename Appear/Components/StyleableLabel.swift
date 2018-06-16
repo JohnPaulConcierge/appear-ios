@@ -7,6 +7,11 @@
 
 import UIKit
 
+/**
+ Class to be used with the `TitleAttributesProperty`
+ 
+ - Note: This class resets the `UILabel.attributedText`, avoid using that variable as it may lead to unexpected results.
+ */
 open class StyleableLabel: UILabel, TitleAttributesStyleable {
     
     open var titleAttributes: TitleAttributesProperty? {

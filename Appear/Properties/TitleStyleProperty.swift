@@ -16,9 +16,10 @@ public protocol TitleAttributesStyleable {
 /**
  TitleAttributesProperty
  
+ Advanced text attributes control.
+ 
  This property is ignored on all UIKit components.
  To use your custom control needs to conform to `TitleAttributesStyleable`
- 
  */
 public struct TitleAttributesProperty: Property {
     

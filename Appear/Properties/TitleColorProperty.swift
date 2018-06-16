@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ Colors the title of a view.
+ */
 public struct TitleColorProperty: Property {
 
     public var colors: [ControlState: UIColor]

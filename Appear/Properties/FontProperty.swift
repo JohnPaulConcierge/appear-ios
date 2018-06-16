@@ -7,7 +7,11 @@
 
 import Foundation
 
-
+/**
+ FontProperty
+ 
+ Updates the font of the control
+ */
 public struct FontProperty: Property {
     
     public var font: UIFont
