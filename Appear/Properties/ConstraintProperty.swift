@@ -16,9 +16,7 @@ public struct ConstraintProperty: Property {
     }
     
     public func apply(view: UIView) {
-        
-        print(view.constraints)
-        
+
         view.constraints.forEach {
             if let c = attributes[$0.firstAttribute] {
                 $0.constant = c

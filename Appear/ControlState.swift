@@ -27,4 +27,19 @@ public enum ControlState: String {
         }
     }
     
+    public static func from(_ state: UIControlState) -> ControlState? {
+        switch state {
+        case .normal:
+            return .normal
+        case .highlighted:
+            return .highlighted
+        case .selected:
+            return .selected
+        case .disabled:
+            return .disabled
+        default:
+            return nil
+        }
+    }
+    
 }
