@@ -1,5 +1,9 @@
 PODS:
-  - Appear (0.0.1)
+  - Appear (0.0.1):
+    - Appear/Components (= 0.0.1)
+    - Appear/Core (= 0.0.1)
+  - Appear/Components (0.0.1)
+  - Appear/Core (0.0.1)
 
 DEPENDENCIES:
   - Appear (from `./`)
@@ -9,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  Appear: 0f55cafe1d474bbd44361c401bf6e603ac6e34ec
+  Appear: fb685dfa2c21926003542ea51445acfbd44e7000
 
 PODFILE CHECKSUM: 9773cf71f72138329b9b1699250b72a0c4f8a5ef
 
