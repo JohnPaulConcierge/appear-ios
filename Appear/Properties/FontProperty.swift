@@ -13,13 +13,13 @@ import Foundation
  Updates the font of the control
  */
 public struct FontProperty: Property {
-    
+
     public var font: UIFont
-    
+
     public init(font: UIFont) {
         self.font = font
     }
-    
+
     public func apply(view: UIView) {
         switch view {
         case let l as UILabel:
@@ -32,5 +32,5 @@ public struct FontProperty: Property {
             break
         }
     }
-    
+
 }

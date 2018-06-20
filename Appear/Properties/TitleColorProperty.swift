@@ -13,11 +13,11 @@ import Foundation
 public struct TitleColorProperty: Property {
 
     public var colors: [ControlState: UIColor]
-    
+
     public init(colors: [ControlState: UIColor]) {
         self.colors = colors
     }
-    
+
     public func apply(view: UIView) {
         switch view {
         case let l as UILabel:
@@ -33,5 +33,5 @@ public struct TitleColorProperty: Property {
             break
         }
     }
-    
+
 }

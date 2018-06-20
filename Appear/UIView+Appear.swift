@@ -10,7 +10,7 @@ import Foundation
 private var AssociatedStyleNameHandle: UInt8 = 0
 
 public extension UIView {
-    
+
     /**
      Associates a style name to a view.
      
@@ -28,5 +28,5 @@ public extension UIView {
             }
         }
     }
-    
+
 }

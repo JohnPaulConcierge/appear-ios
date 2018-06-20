@@ -12,12 +12,12 @@ import Foundation
  This is required because UIControlState does not implement the Hashable protocol and making a UIControlState extension may result in conflicts.
  */
 public enum ControlState: String {
-    
+
     case normal
     case highlighted
     case selected
     case disabled
-    
+
     public var uiControlState: UIControlState {
         switch self {
         case .normal:
@@ -30,7 +30,7 @@ public enum ControlState: String {
             return .disabled
         }
     }
-    
+
     public static func from(_ state: UIControlState) -> ControlState? {
         switch state {
         case .normal:
@@ -45,5 +45,5 @@ public enum ControlState: String {
             return nil
         }
     }
-    
+
 }

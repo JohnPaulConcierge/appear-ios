@@ -8,5 +8,6 @@ target 'Example' do
   use_frameworks!
 
   pod 'Appear', path: './'
+  pod 'SwiftLint'
 
 end

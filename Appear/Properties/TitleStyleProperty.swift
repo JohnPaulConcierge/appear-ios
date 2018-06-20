@@ -8,9 +8,9 @@
 import Foundation
 
 public protocol TitleAttributesStyleable {
-    
+
     func apply(titleAttributes: TitleAttributesProperty)
-    
+
 }
 
 /**
@@ -22,15 +22,15 @@ public protocol TitleAttributesStyleable {
  To use your custom control needs to conform to `TitleAttributesStyleable`
  */
 public struct TitleAttributesProperty: Property {
-    
+
     public var attributes: [ControlState: [NSAttributedStringKey: Any]]?
-    
+
     public var uppercased: Bool
-    
+
     public init(attributes: [ControlState: [NSAttributedStringKey: Any]]?, uppercased: Bool = false, useNormalAsDefault: Bool = true) {
-        
+
         if useNormalAsDefault, let a = attributes, let normal = a[.normal] {
-            
+
             func merge(state: ControlState) -> [NSAttributedStringKey: Any] {
                 var d = normal
                 a[state]?.forEach {
@@ -38,24 +38,24 @@ public struct TitleAttributesProperty: Property {
                 }
                 return d
             }
-            
+
             self.attributes = [
                 .normal: normal,
                 .highlighted: merge(state: .highlighted),
                 .selected: merge(state: .selected),
-                .disabled: merge(state: .disabled),
+                .disabled: merge(state: .disabled)
             ]
-            
+
         } else {
             self.attributes = attributes
         }
         self.uppercased = uppercased
     }
-    
+
     public func apply(view: UIView) {
         if let s = view as? TitleAttributesStyleable {
             s.apply(titleAttributes: self)
         }
     }
-    
+
 }

@@ -13,16 +13,16 @@ import Foundation
  When applied, only the constraints of the view and its superview will be affected.
  */
 public struct ConstraintProperty: Property {
-    
+
     /**
      The attributes that will be updated.
      */
     public var attributes: [NSLayoutAttribute: CGFloat]
-    
+
     public init(attributes: [NSLayoutAttribute: CGFloat]) {
         self.attributes = attributes
     }
-    
+
     /**
      Updates the view's constraints
      
@@ -37,9 +37,9 @@ public struct ConstraintProperty: Property {
                 $0.constant = c
             }
         }
-        
+
         view.superview?.constraints.forEach { constraint in
-            
+
             let attribute: NSLayoutAttribute
             if constraint.firstItem as? UIView == view {
                 attribute = constraint.firstAttribute
@@ -48,12 +48,12 @@ public struct ConstraintProperty: Property {
             } else {
                 return
             }
-            
+
             if let c = attributes[attribute] {
                 constraint.constant = c
             }
         }
-        
+
     }
-    
+
 }
