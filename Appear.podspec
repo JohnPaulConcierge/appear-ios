@@ -17,11 +17,16 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/JohnPaulConcierge/appear-ios.git", :tag => "#{s.version}" }
 
   s.subspec 'Core' do |cs|
-    cs.source_files = "Appear/*.swift", "Appear/Properties/*.swift"
+    cs.source_files = "Appear/*.swift", "Appear/Properties/*.swift"    
   end
 
   s.subspec 'Components' do |cs|
     cs.source_files = "Appear/Components/*.swift"
   end
+
+  s.test_spec 'Tests' do |test_spec|
+      test_spec.source_files = 'Tests/*.swift'
+  end  
+
 
 end

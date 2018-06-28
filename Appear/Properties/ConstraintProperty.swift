@@ -12,7 +12,7 @@ import Foundation
  
  When applied, only the constraints of the view and its superview will be affected.
  */
-public struct ConstraintProperty: Property {
+public struct ConstraintProperty: Property, Equatable {
 
     /**
      The attributes that will be updated.
@@ -56,4 +56,28 @@ public struct ConstraintProperty: Property {
 
     }
 
+    /// Combines the property with a newer version by simply merging the attributes dictionary.
+    /// If the parameter is of another type, then it is simply returned.
+    ///
+    /// - Parameter property: a property
+    public func combined(with property: Property) -> Property {
+        guard let cp = property as? ConstraintProperty else {
+            return property
+        }
+
+        var p = self
+        cp.attributes.forEach {
+            p.attributes[$0.key] = $0.value
+        }
+        return p
+    }
+
+    public var identifier: String {
+        return "Constraint"
+    }
+
+}
+
+public func == (lhs: ConstraintProperty, rhs: ConstraintProperty) -> Bool {
+    return lhs.attributes == rhs.attributes
 }

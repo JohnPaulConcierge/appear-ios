@@ -12,7 +12,7 @@ import Foundation
  
  Updates the font of the control
  */
-public struct FontProperty: Property {
+public struct FontProperty: Property, Equatable {
 
     public var font: UIFont
 
@@ -33,4 +33,12 @@ public struct FontProperty: Property {
         }
     }
 
+    public var identifier: String {
+        return "Font"
+    }
+
+}
+
+public func == (lhs: FontProperty, rhs: FontProperty) -> Bool {
+    return lhs.font == rhs.font
 }

@@ -4,10 +4,12 @@ PODS:
     - Appear/Core (= 0.0.1)
   - Appear/Components (0.0.1)
   - Appear/Core (0.0.1)
+  - Appear/Tests (0.0.1)
   - SwiftLint (0.25.1)
 
 DEPENDENCIES:
   - Appear (from `./`)
+  - Appear/Tests (from `./`)
   - SwiftLint
 
 SPEC REPOS:
@@ -19,9 +21,9 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  Appear: fb685dfa2c21926003542ea51445acfbd44e7000
+  Appear: 30402bbbacd21fff5bf1f9c0ac75a1cc9d7f2e4c
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: 1d796401699c7c64abfc8d2be4c76dbdcbecdbdd
+PODFILE CHECKSUM: 7d0f827fca6ccc7bd9617595aa27ef218732a6d2
 
 COCOAPODS: 1.5.3

@@ -10,7 +10,7 @@ import Foundation
 /**
  Sets the view's background to either an image or a color
  */
-public struct BackgroundProperty: Property {
+public struct BackgroundProperty: Property, Equatable {
 
     public enum Kind {
         case images([ControlState: UIImage])
@@ -40,6 +40,23 @@ public struct BackgroundProperty: Property {
             view.backgroundColor = UIColor(patternImage: i)
             break
         }
+    }
+
+    public var identifier: String {
+        return "Background"
+    }
+
+}
+
+public func == (lhs: BackgroundProperty, rhs: BackgroundProperty) -> Bool {
+
+    switch (lhs.kind, rhs.kind) {
+    case (.images(let li), .images(let ri)):
+        return li == ri
+    case (.color(let lc), .color(let rc)):
+        return lc == rc
+    default:
+        return false
     }
 
 }
