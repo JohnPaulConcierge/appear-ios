@@ -7,6 +7,7 @@ workspace 'Appear'
 target 'Example' do
   use_frameworks!
 
-  pod 'Appear', path: './'
+  pod 'Appear', path: './', :testspecs => ['Tests'] 
+  pod 'SwiftLint'
 
 end
