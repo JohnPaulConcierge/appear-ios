@@ -25,7 +25,7 @@ open class StyleableButton: UIButton, TitleAttributesStyleable {
         super.setTitle(title, for: state)
 
         if state == .normal {
-            // We have to override all states otherwise the attributes won't be displayed property :(
+            // We have to override all states otherwise the attributes won't be displayed properly :(
             resetAllAttributedTexts()
         } else {
             resetAttributedText(for: state)
