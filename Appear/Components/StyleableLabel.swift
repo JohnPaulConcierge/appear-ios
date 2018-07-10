@@ -31,11 +31,10 @@ open class StyleableLabel: UILabel, TitleAttributesStyleable {
     }
 
     open func resetAttributedText() {
-
         if let a = titleAttributes, let t = text {
             attributedText = NSAttributedString(string: a.uppercased ? t.uppercased() : t, attributes: a.attributes?[.normal])
         } else {
-            attributedText = nil
+            attributedText = NSAttributedString(string: text ?? "")
         }
     }
 
