@@ -1,5 +1,5 @@
 //
-//  TitleColorProperty.swift
+//  ForegroundColorProperty.swift
 //  Alamofire
 //
 //  Created by John Paul on 6/15/18.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// Colors the title of a view.
-public struct TitleColorProperty: Property, Equatable {
+public struct ForegroundColorProperty: Property, Equatable {
 
     public var colors: [ControlState: UIColor]
 
@@ -27,7 +27,13 @@ public struct TitleColorProperty: Property, Equatable {
             colors.forEach {
                 b.setTitleColor($0.value, for: $0.key.uiControlState)
             }
+        case let a as UIActivityIndicatorView:
+            a.color = colors[.normal]
+        case let s as UISwitch:
+            s.thumbTintColor = colors[.normal]
+            s.onTintColor = colors[.selected]
         default:
+            view.tintColor = colors[.normal]
             break
         }
     }
@@ -37,7 +43,7 @@ public struct TitleColorProperty: Property, Equatable {
     ///
     /// - Parameter property: a property
     public func combined(with property: Property) -> Property {
-        guard let tp = property as? TitleColorProperty else {
+        guard let tp = property as? ForegroundColorProperty else {
             return property
         }
         var p = self
@@ -54,6 +60,6 @@ public struct TitleColorProperty: Property, Equatable {
 }
 
 
-public func == (lhs: TitleColorProperty, rhs: TitleColorProperty) -> Bool {
+public func == (lhs: ForegroundColorProperty, rhs: ForegroundColorProperty) -> Bool {
     return lhs.colors == rhs.colors
 }
