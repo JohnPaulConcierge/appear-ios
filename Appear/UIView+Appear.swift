@@ -23,7 +23,7 @@ public extension UIView {
         }
         set {
             objc_setAssociatedObject(self, &AssociatedStyleNameHandle, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            if let n = newValue, let style = styles?[n] {
+            if let n = newValue, let style = style(for: n) {
                 style.apply(view: self)
             }
         }

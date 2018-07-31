@@ -27,7 +27,7 @@ public struct TitleAttributesProperty: Property {
 
     public var uppercased: Bool
 
-    public init(attributes: [ControlState: [NSAttributedStringKey: Any]]?, uppercased: Bool = false, useNormalAsDefault: Bool = true) {
+    public init(attributes: [ControlState: [NSAttributedStringKey: Any]]? = nil, uppercased: Bool = false, useNormalAsDefault: Bool = true) {
 
         if useNormalAsDefault, let a = attributes, let normal = a[.normal] {
 

@@ -16,6 +16,11 @@ public struct ForegroundColorProperty: Property, Equatable {
         self.colors = colors
     }
 
+    public init(color: UIColor) {
+        self.init(colors: [.normal: color,
+                           .disabled: color.withAlphaComponent(0.4)])
+    }
+
     public func apply(view: UIView) {
         switch view {
         case let l as UILabel:
