@@ -15,6 +15,14 @@ public struct TitleProperty: Property {
 
     public var texts: [ControlState: String]
 
+    public init(image: UIImage) {
+        self.init(images: [.normal: image])
+    }
+
+    public init(text: String) {
+        self.init(texts: [.normal: text])
+    }
+
     public init(images: [ControlState: UIImage] = [:], texts: [ControlState: String] = [:]) {
         self.images = images
         self.texts = texts

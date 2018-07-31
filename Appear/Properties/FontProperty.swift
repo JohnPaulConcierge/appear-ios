@@ -20,6 +20,10 @@ public struct FontProperty: Property, Equatable {
         self.font = font
     }
 
+    public init(name: String, size: CGFloat) {
+        self.init(font: UIFont(name: name, size: size)!)
+    }
+
     public func apply(view: UIView) {
         switch view {
         case let l as UILabel:

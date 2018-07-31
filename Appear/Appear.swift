@@ -17,3 +17,13 @@ public var styles: [String: Style]?
 public func build(components: [String: [StyleComponent]]) {
     Appear.styles = Builder(components: components).build()
 }
+
+public func style(for name: String) -> Style? {
+    if let s = styles?[name] {
+        return s
+    } else if let i = name.index(of: ":"),
+        i != name.endIndex {
+        return styles?[String(name.suffix(from: name.index(after: i)))]
+    }
+    return nil
+}
