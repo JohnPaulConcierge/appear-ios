@@ -23,15 +23,15 @@ public protocol TitleAttributesStyleable {
  */
 public struct TitleAttributesProperty: Property {
 
-    public var attributes: [ControlState: [NSAttributedStringKey: Any]]?
+    public var attributes: [ControlState: [NSAttributedString.Key: Any]]?
 
     public var uppercased: Bool
 
-    public init(attributes: [ControlState: [NSAttributedStringKey: Any]]? = nil, uppercased: Bool = false, useNormalAsDefault: Bool = true) {
+    public init(attributes: [ControlState: [NSAttributedString.Key: Any]]? = nil, uppercased: Bool = false, useNormalAsDefault: Bool = true) {
 
         if useNormalAsDefault, let a = attributes, let normal = a[.normal] {
 
-            func merge(state: ControlState) -> [NSAttributedStringKey: Any] {
+            func merge(state: ControlState) -> [NSAttributedString.Key: Any] {
                 var d = normal
                 a[state]?.forEach {
                     d[$0.key] = $0.value

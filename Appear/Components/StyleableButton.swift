@@ -16,12 +16,12 @@ open class StyleableButton: UIButton, TitleAttributesStyleable {
 
     open var titleAttributes: TitleAttributesProperty? {
         didSet {
-            let states: [UIControlState] = [.normal, .highlighted, .selected, .disabled]
+            let states: [UIControl.State] = [.normal, .highlighted, .selected, .disabled]
             states.forEach { resetAttributedText(for: $0) }
         }
     }
 
-    open override func setTitle(_ title: String?, for state: UIControlState) {
+    open override func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title, for: state)
 
         if state == .normal {
@@ -37,15 +37,15 @@ open class StyleableButton: UIButton, TitleAttributesStyleable {
     }
 
     open func resetAllAttributedTexts() {
-        for state in [UIControlState.normal,
-                      UIControlState.highlighted,
-                      UIControlState.disabled,
-                      UIControlState.selected] {
+        for state in [UIControl.State.normal,
+                      UIControl.State.highlighted,
+                      UIControl.State.disabled,
+                      UIControl.State.selected] {
                         resetAttributedText(for: state)
         }
     }
 
-    open func resetAttributedText(for state: UIControlState) {
+    open func resetAttributedText(for state: UIControl.State) {
 
         if let a = titleAttributes, let t = title(for: state) ?? title(for: .normal), let s = ControlState.from(state) {
             setAttributedTitle(NSAttributedString(string: a.uppercased ? t.uppercased() : t, attributes: a.attributes?[s]), for: state)
