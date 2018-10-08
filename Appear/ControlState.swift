@@ -18,7 +18,7 @@ public enum ControlState: String {
     case selected
     case disabled
 
-    public var uiControlState: UIControlState {
+    public var uiControlState: UIControl.State {
         switch self {
         case .normal:
             return .normal
@@ -31,7 +31,7 @@ public enum ControlState: String {
         }
     }
 
-    public static func from(_ state: UIControlState) -> ControlState? {
+    public static func from(_ state: UIControl.State) -> ControlState? {
         switch state {
         case .normal:
             return .normal

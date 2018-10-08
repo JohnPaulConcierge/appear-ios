@@ -17,9 +17,9 @@ public struct ConstraintProperty: Property, Equatable {
     /**
      The attributes that will be updated.
      */
-    public var attributes: [NSLayoutAttribute: CGFloat]
+    public var attributes: [NSLayoutConstraint.Attribute: CGFloat]
 
-    public init(attributes: [NSLayoutAttribute: CGFloat]) {
+    public init(attributes: [NSLayoutConstraint.Attribute: CGFloat]) {
         self.attributes = attributes
     }
 
@@ -40,7 +40,7 @@ public struct ConstraintProperty: Property, Equatable {
 
         view.superview?.constraints.forEach { constraint in
 
-            let attribute: NSLayoutAttribute
+            let attribute: NSLayoutConstraint.Attribute
             if constraint.firstItem as? UIView == view {
                 attribute = constraint.firstAttribute
             } else if constraint.secondItem as? UIView == view {
