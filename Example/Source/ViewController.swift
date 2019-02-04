@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Appear
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        Appear.build(components: [:])
     }
 
     override func didReceiveMemoryWarning() {

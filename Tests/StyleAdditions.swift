@@ -40,4 +40,3 @@ extension Style: Equatable {
 public func == (lhs: Style, rhs: Style) -> Bool {
     return lhs.check(properties: rhs.properties)
 }
-

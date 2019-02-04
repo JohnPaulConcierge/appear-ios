@@ -54,14 +54,13 @@ extension FontProperty: ComparableProperty {
     }
 }
 
-extension TitleColorProperty: ComparableProperty {
-
-    public func equals(property: Property) -> Bool {
-        if let bp = property as? TitleColorProperty {
-            return self == bp
-        } else {
-            return false
-        }
-    }
-}
-
+//extension TitleAttributesProperty: ComparableProperty {
+//
+//    public func equals(property: Property) -> Bool {
+//        if let bp = property as? TitleAttributesProperty {
+//            return self.attributes == bp.attributes
+//        } else {
+//            return false
+//        }
+//    }
+//}
