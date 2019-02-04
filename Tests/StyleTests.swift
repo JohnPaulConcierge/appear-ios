@@ -36,5 +36,5 @@ class StyleTests: XCTestCase {
 
         XCTAssert(style.check(properties: [bp1.combined(with: bp2), cp1]))
     }
-    
+
 }

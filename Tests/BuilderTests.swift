@@ -9,7 +9,7 @@ import XCTest
 @testable import Appear
 
 class BuilderTests: XCTestCase {
-    
+
     func testBuildProperties() {
 
         let ps: [Property] = [ConstraintProperty(attributes: [.left: 40]),
@@ -32,7 +32,7 @@ class BuilderTests: XCTestCase {
             "Test2": ["Test1", bp2],
             "Test0": ["Test1", cp1],
             "TestX": [cp1, "Test1"],
-            "Te": [cp1, "Test1", "TestX"],
+            "Te": [cp1, "Test1", "TestX"]
             ]).build()
 
         XCTAssert(styles["Test1"]?.check(properties: [bp1]) ?? false)
@@ -42,5 +42,5 @@ class BuilderTests: XCTestCase {
         XCTAssert(styles["Te"]?.check(properties: [cp1, bp1]) ?? false)
 
     }
-    
+
 }

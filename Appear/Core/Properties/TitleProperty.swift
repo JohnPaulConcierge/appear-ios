@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 /// Controls the title (image and text) of a button, label or image
 public struct TitleProperty: Property {
 
@@ -49,7 +48,7 @@ public struct TitleProperty: Property {
         default:
             break
         }
-        
+
     }
-    
+
 }

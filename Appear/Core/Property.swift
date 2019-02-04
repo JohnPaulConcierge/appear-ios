@@ -12,7 +12,6 @@ import Foundation
  */
 public protocol Property: StyleComponent {
 
-
     /// A unique identifier defining the type of property.
     ///
     /// When building a `Style`, properties of the same identifier will be combined.
@@ -23,7 +22,6 @@ public protocol Property: StyleComponent {
     ///
     /// - Parameter view: the view to apply the property to
     func apply(view: UIView)
-
 
     /// Computes the combination of 2 properties
     ///

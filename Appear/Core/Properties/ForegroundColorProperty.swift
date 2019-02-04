@@ -64,7 +64,6 @@ public struct ForegroundColorProperty: Property, Equatable {
 
 }
 
-
 public func == (lhs: ForegroundColorProperty, rhs: ForegroundColorProperty) -> Bool {
     return lhs.colors == rhs.colors
 }

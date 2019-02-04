@@ -92,7 +92,7 @@ public struct TitleAttributesProperty: Property {
                 } else {
                     p.attributes?[tuple0.key] = tuple0.value
                 }
-            }   
+            }
         }
         return p
     }
