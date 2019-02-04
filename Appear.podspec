@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Appear'
-  s.version      = '0.0.1'
+  s.version      = '0.1.0'
   s.summary      = 'Simple Stylesheets for iOS'
 
   s.description  = <<-DESC
