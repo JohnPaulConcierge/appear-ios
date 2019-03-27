@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Appear'
-  s.version      = '0.1.0'
+  s.version      = '0.1.1'
   s.summary      = 'Simple Stylesheets for iOS'
 
   s.description  = <<-DESC
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   DESC
 
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.homepage     = 'https://github.com/JohnPaulConcierge/appear-ios.git'
   s.license      = { type: 'MIT', file: 'LICENSE' }

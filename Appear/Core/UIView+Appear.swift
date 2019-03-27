@@ -17,7 +17,7 @@ public extension UIView {
      The setter of this variable apply the style found in the `styles` module variable
      */
     @IBInspectable
-    public var styleName: String? {
+    var styleName: String? {
         get {
             return objc_getAssociatedObject(self, &AssociatedStyleNameHandle) as? String
         }

@@ -21,7 +21,7 @@ public func build(components: [String: [StyleComponent]]) {
 public func style(for name: String) -> Style? {
     if let s = styles?[name] {
         return s
-    } else if let i = name.index(of: ":"),
+    } else if let i = name.firstIndex(of: ":"),
         i != name.endIndex {
         return styles?[String(name.suffix(from: name.index(after: i)))]
     }
